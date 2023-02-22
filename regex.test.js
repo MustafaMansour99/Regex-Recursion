@@ -36,15 +36,21 @@ required extention are jpg, jpeg and png.
 
 function imagesSearcher(text){
     let arr = [];
-    const parts = text.split(" ");
-    for (let i = 0; i < arr.length; i++) {
-      if (
-        parts[i].match(/^[a-z\-]+\.(jpg|jpeg|png)$/g)
-      ) {
-        arr.push(parts[i]);
-      }
-    }
+ //   const parts = text.split(" ");
+  //  for (let i = 0; i < arr.length; i++) {
+    //  if ( parts[i].match(/^[a-z\-]+\.(jpg|jpeg|png)$/g)) {
+     //   arr.push(parts[i]);
+    //  }
+   // }
+   // return arr;
+   let reg1 =/^[A-Za-z]+.jpg$/;
+   let reg2 =/^[A-Za-z]+.jpeg$/;
+   let reg3  =/^[A-Za-z]+.png$/;
+   arr =text.split(" ").filter((e) => reg1.test(e)|| reg2.test(e)||reg3.test(e))
     return arr;
+
+
+
   }
 
 
